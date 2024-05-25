@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useEffect, useState } from 'react';
 import CharacterTable from './CharacterTable';
 import CharacterCard from './CharacterCard';

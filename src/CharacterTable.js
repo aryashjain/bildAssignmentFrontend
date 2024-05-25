@@ -7,10 +7,10 @@ const CharacterTable = ({ characters, onFetchCharacter }) => {
       <thead>
         <tr>
           <th>ID</th>
+          <th>Image</th>
           <th>Name</th>
           <th>Status</th>
           <th>Species</th>
-          <th>Image</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -18,10 +18,11 @@ const CharacterTable = ({ characters, onFetchCharacter }) => {
         {characters.map(character => (
           <tr key={character.id}>
             <td>{character.id}</td>
+            <td><img src={character.image} alt={character.name} width="60" /></td>
             <td>{character.name}</td>
             <td>{character.status}</td>
             <td>{character.species}</td>
-            <td><img src={character.image} alt={character.name} width="50" /></td>
+           
             <td>
               <button onClick={() => onFetchCharacter(character.id)}>Fetch</button>
             </td>
