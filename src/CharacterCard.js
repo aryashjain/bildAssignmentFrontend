@@ -8,7 +8,7 @@ const CharacterCard = ({ characterId }) => {
   useEffect(() => {
     const fetchCharacter = async () => {
       try {
-        const response = await fetch(`${URL}/getCharacters/${characterId}`);
+        const response = await fetch(`${URL}/getCharacter/${characterId}`);
         const data = await response.json();
         setCharacter(data.result);
         // console.log(data);
