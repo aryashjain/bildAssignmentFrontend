@@ -3,6 +3,7 @@ import CharacterTable from './CharacterTable';
 import CharacterCard from './CharacterCard';
 import './App.css';
 
+const URL = process.env.REACT_APP_BASEURL ||'http://localhost:5000/api/v1';
 function App() {
   const [characters, setCharacters] = useState([]);
   const [page, setPage] = useState(1);
@@ -12,7 +13,7 @@ function App() {
   useEffect(() => {
     const fetchCharacters = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/v1/getCharacters?page=${page}`);
+        const response = await fetch(`${URL}/getCharacters?page=${page}`);
         const data = await response.json();
         setCharacters(data.result);
       } catch (error) {
